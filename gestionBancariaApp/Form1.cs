@@ -48,7 +48,7 @@ namespace gestionBancariaApp
                     break;
                 default:
                     cuenta.mostrarError(2);
-                break;
+                    break;
 
             }
 
