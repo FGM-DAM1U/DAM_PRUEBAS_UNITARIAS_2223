@@ -25,6 +25,15 @@ public class gestionBancaria
         return saldo;
     }
 
+    // Añadido método para exámen 2ª evaluación:
+    public void aperturaCuenta(double cantidadApertura)
+    {
+        if (cantidadApertura >= 1 && cantidadApertura <= 100)
+            saldo = cantidadApertura;
+        else
+            saldo = 0;
+    }
+
     public void realizarReintegro(double cantidad)
     {
         if (cantidad < 0) // código corregido

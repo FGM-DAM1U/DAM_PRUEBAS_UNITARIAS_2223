@@ -8,6 +8,111 @@ namespace gestionBancariaTest
     public class gestionBancariaTests
     {
         [TestMethod] // unit test code
+        public void validarAperturaCuentaP1()
+        {
+            // preparación del caso de prueba
+            double saldoInicial = 0;
+            double ingreso = 1; // Valor límite (min), clase válida
+            double saldoActual = 0;
+            double saldoEsperado = 1;
+
+            gestionBancaria cuenta = new gestionBancaria(saldoInicial);
+
+            // Método a probar
+
+            cuenta.aperturaCuenta(ingreso);
+
+            // afirmación de la prueba (valor esperado Vs. Valor obtenido)
+            saldoActual = cuenta.obtenerSaldo();
+
+            Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "Cantidad de apertura incorrecta (inferior a 1 o superior a 100");
+        }
+
+        [TestMethod] // unit test code
+        public void validarAperturaCuentaP2()
+        {
+            // preparación del caso de prueba
+            double saldoInicial = 0;
+            double ingreso = 100; // Valor límite (max), clase válida
+            double saldoActual = 0;
+            double saldoEsperado = 100;
+
+            gestionBancaria cuenta = new gestionBancaria(saldoInicial);
+
+            // Método a probar
+
+            cuenta.aperturaCuenta(ingreso);
+
+            // afirmación de la prueba (valor esperado Vs. Valor obtenido)
+            saldoActual = cuenta.obtenerSaldo();
+
+            Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "Cantidad de apertura incorrecta (inferior a 1 o superior a 100");
+        }
+
+        [TestMethod] // unit test code
+        public void validarAperturaCuentaP3()
+        {
+            // preparación del caso de prueba
+            double saldoInicial = 0;
+            double ingreso = 50; // Valor normal, clase válida
+            double saldoActual = 0;
+            double saldoEsperado = 50;
+
+            gestionBancaria cuenta = new gestionBancaria(saldoInicial);
+
+            // Método a probar
+
+            cuenta.aperturaCuenta(ingreso);
+
+            // afirmación de la prueba (valor esperado Vs. Valor obtenido)
+            saldoActual = cuenta.obtenerSaldo();
+
+            Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "Cantidad de apertura incorrecta (inferior a 1 o superior a 100");
+        }
+
+        [TestMethod] // unit test code
+        public void validarAperturaCuentaP4()
+        {
+            // preparación del caso de prueba
+            double saldoInicial = 0;
+            double ingreso = 0; // Valor límite (min-1), clase inválida
+            double saldoActual = 0;
+            double saldoEsperado = 1; // Mínimo 1 para poder abrir la cuenta.
+
+            gestionBancaria cuenta = new gestionBancaria(saldoInicial);
+
+            // Método a probar
+
+            cuenta.aperturaCuenta(ingreso);
+
+            // afirmación de la prueba (valor esperado Vs. Valor obtenido)
+            saldoActual = cuenta.obtenerSaldo();
+
+            Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "Cantidad de apertura incorrecta (inferior a 1 o superior a 100");
+        }
+
+        [TestMethod] // unit test code
+        public void validarAperturaCuentaP5()
+        {
+            // preparación del caso de prueba
+            double saldoInicial = 0;
+            double ingreso = 101; // Valor límite (max+1), clase inválida
+            double saldoActual = 0;
+            double saldoEsperado = 101;
+
+            gestionBancaria cuenta = new gestionBancaria(saldoInicial);
+
+            // Método a probar
+
+            cuenta.aperturaCuenta(ingreso);
+
+            // afirmación de la prueba (valor esperado Vs. Valor obtenido)
+            saldoActual = cuenta.obtenerSaldo();
+
+            Assert.AreEqual(saldoEsperado, saldoActual, 0.001, "Cantidad de apertura incorrecta (inferior a 1 o superior a 100");
+        }
+
+        [TestMethod] // unit test code
         public void validarMIngresoP1()
         {
             // preparación del caso de prueba
